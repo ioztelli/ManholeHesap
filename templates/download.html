@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Download Files</title>
+</head>
+<body>
+<table border=1>
+    {% for link in result %}
+    <tr>
+        <th>{{link[0]}}</th>
+        <td><a href={{link[1] }}><b>İndir</b></a></td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

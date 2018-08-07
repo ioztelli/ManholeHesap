@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manhole DXF</title>
+</head>
+<body>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-us36{border-color:inherit;vertical-align:top}
+.tg .tg-82fe{font-weight:bold;font-size:100%;border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-6ic8{font-weight:bold;border-color:inherit;text-align:right;vertical-align:top}
+.tg .tg-l2oz{font-weight:bold;text-align:right;vertical-align:top}
+.tg .tg-yw4l{vertical-align:top}
+.tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
+</style>
+<table class="tg" style="undefined;table-layout: fixed; width: 614px">
+<colgroup>
+<col style="width: 281px">
+<col style="width: 333px">
+</colgroup>
+  <tr>
+    <th class="tg-82fe" colspan="2">Manhole Bilgileri</th>
+  </tr>
+  <tr>
+    <td class="tg-6ic8">Manhole No:</td>
+    <td class="tg-us36">{{ manhole.name }}</td>
+  </tr>
+  <tr>
+    <td class="tg-l2oz">Zemin Kotu:</td>
+    <td class="tg-yw4l">{{ manhole.gl }}</td>
+  </tr>
+  <tr>
+    <td class="tg-l2oz">Akar Kotu:</td>
+    <td class="tg-yw4l">{{ manhole.il }}</td>
+  </tr>
+  <tr>
+    <td class="tg-l2oz">Yükseklik:</td>
+    <td class="tg-yw4l">{{ manhole.Height() }}</td>
+  </tr>
+  <tr>
+    <td class="tg-l2oz">Çapı:<br></td>
+    <td class="tg-yw4l">{{ manhole.Diameter() }}</td>
+  </tr>
+  <tr>
+    <td class="tg-l2oz">X:</td>
+    <td class="tg-yw4l">{{ manhole.x }}</td>
+  </tr>
+  <tr>
+    <td class="tg-l2oz">Y:</td>
+    <td class="tg-yw4l">{{ manhole.y }}</td>
+  </tr>
+  <tr>
+    <td class="tg-amwm" colspan="2">Kullanılacak Parçalar</td>
+  </tr>
+    <tr>
+    <td class="tg-l2oz">Temel:</td>
+    <td class="tg-yw4l">1</td>
+  </tr>
+  <tr>
+    <td class="tg-l2oz">Bilezik 60cm:</td>
+    <td class="tg-yw4l">{{parca[1][0]}}</td>
+  </tr>
+  <tr>
+    <td class="tg-l2oz">Bilezik 40cm:</td>
+    <td class="tg-yw4l">{{parca[1][1]}}</td>
+  </tr>
+  <tr>
+    <td class="tg-l2oz">Bilezik 25cm:</td>
+    <td class="tg-yw4l">{{parca[1][2]}}</td>
+  </tr>
+  <tr>
+    <td class="tg-l2oz">Konik:</td>
+    <td class="tg-yw4l">1</td>
+  </tr>
+  <tr>
+    <td class="tg-l2oz">Ayar Bileziği 10cm:</td>
+    <td class="tg-yw4l">{{ parca[1][3]}}</td>
+  </tr>
+    <tr>
+    <td class="tg-l2oz">Kapak:</td>
+    <td class="tg-yw4l">1</td>
+  </tr>
+  <tr>
+    <td class="tg-l2oz">Hata Miktarı:</td>
+    <td class="tg-yw4l">{{ parca[0]}} m</td>
+  </tr>
+</table>
+
+
+<a href="{{link}}"><b>İndir</b></a>
+</body>
+</html>

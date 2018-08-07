@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+   <body>
+
+      <h2 style = "text-align: center;">Manhole Form</h2>
+
+      {% for message in form.name.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+
+   <form action = "/result" method = post>
+       <fieldset>
+            <legend>Manhole Form</legend>
+           {{ form.hidden_tag() }}
+            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+                 {{ form.name.label }} : {{ form.name }}
+               <br>
+                {{ form.gl.label }} : {{ form.gl }}
+                <br>
+                {{ form.il.label }} : {{ form.il }}
+                <br>
+                {{ form.x.label }} : {{ form.x }}
+                <br>
+                {{ form.y.label }} : {{ form.y }}
+                <br>
+               {{ form.submit }}
+                           </div>
+
+         </fieldset>
+      </form>
+<a href="/download"><b>Dosyalar</b></a>
+   </body>
+</html>
