@@ -1,7 +1,6 @@
 import ezdxf
 import sys
 
-
 class Manhole:
     def __init__(self,name,gl,il,x,y):
         self.name=name

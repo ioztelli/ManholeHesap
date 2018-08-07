@@ -4,13 +4,6 @@ from forms import ManholeForm
 import os
 from flask_wtf import FlaskForm
 
-
-# baca100=Manhole('100',170.38,168.30,100.00,200.00)
-# baca100.Parcahesap()
-# baca100.Ciz()
-
-
-
 app=Flask(__name__)
 app.debug = True
 app.secret_key = '1q2w3e4r5t6y'
