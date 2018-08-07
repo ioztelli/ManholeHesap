@@ -28,11 +28,9 @@ def resultpage():
    else:
       return redirect('/')
 
-
 @app.route("/dxf/<path:path>")
 def get_file(path:None):
       return send_file('dxf/'+path, as_attachment=True)
-
 
 @app.route('/download',methods=['GET'])
 def download():

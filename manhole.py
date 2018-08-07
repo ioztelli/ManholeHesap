@@ -8,7 +8,6 @@ class Manhole:
         self.il=il
         self.x=x
         self.y=y
-
     def Height(self):
         return round(self.gl-self.il,2)
     def Diameter(self):
@@ -17,7 +16,6 @@ class Manhole:
         #     return 1000
         # else:
         #     return 1500
-
     def Parcahesap(self):
         if self.Diameter()==1000:
             # Sabit Parcalar
@@ -51,7 +49,6 @@ class Manhole:
         else:
             #1500 malzeme icin yazilacak.
             pass
-
     def bilezikciz1000(self,dwg, msp, xbase, ybase, h):
         isim = "B" + str(h)
         if dwg.blocks.get(isim) == None:
@@ -66,7 +63,6 @@ class Manhole:
             bilezikblok.add_polyline2d(points_sag)
             bilezikblok.add_polyline2d(points_sol)
         msp.add_blockref(isim, (xbase, ybase))
-
     def temelciz1000(self,dwg, msp, xbase, ybase):
         isim = 'temel000'
         if dwg.blocks.get(isim) == None:
@@ -78,7 +74,6 @@ class Manhole:
             temelblok = dwg.blocks.new(name=isim)
             temelblok.add_polyline2d(points)
         msp.add_blockref(isim, (xbase, ybase))
-
     def konikciz1000(self,dwg, msp, xbase, ybase):
         isim = 'konik1000'
         if dwg.blocks.get(isim) == None:
@@ -94,7 +89,6 @@ class Manhole:
             konikblok.add_polyline2d(points_sag)
             konikblok.add_polyline2d(points_sol)
         msp.add_blockref(isim, (xbase, ybase))
-
     def ayarbilezikciz(self,dwg, msp, xbase, ybase):
         isim = 'ayarbilezik'
         if dwg.blocks.get(isim) == None:
@@ -108,7 +102,6 @@ class Manhole:
             ayarblok.add_polyline2d(points_sag)
             ayarblok.add_polyline2d(points_sol)
         msp.add_blockref(isim, (xbase, ybase))
-
     def kapakciz(self,dwg, msp, xbase, ybase):
         isim = 'kapak'
         if dwg.blocks.get(isim) == None:
@@ -118,23 +111,18 @@ class Manhole:
             kapakblok = dwg.blocks.new(name=isim)
             kapakblok.add_polyline2d(points)
         msp.add_blockref(isim, (xbase, ybase))
-
     def Ciz(self):
         dwg = ezdxf.new('R2010')
         msp = dwg.modelspace()
         if self.Diameter() == 1000:
             if self.Height() < 1.75:
                 print('Hata:Manhole 1.75 den kisadir.')
-
             parcalar = self.Parcahesap()
             b60 = parcalar[1][0]
             b40 = parcalar[1][1]
             b25 = parcalar[1][2]
             b10 = parcalar[1][3]
-            print("MH={0} Kullanilacak parcalar: Temel+60x{1}+40x{2}+25x{3}+10x{4}+Konik+Kapak".format(self.name, str(b60),
-                                                                                                       str(b40),
-                                                                                                       str(b25),
-                                                                                                       str(b10)))
+            print("MH={0} Kullanilacak parcalar: Temel+60x{1}+40x{2}+25x{3}+10x{4}+Konik+Kapak".format(self.name, str(b60),str(b40),str(b25),str(b10)))
             xbase = 0
             ybase = 0
             self.temelciz1000(dwg,msp, xbase, ybase)
@@ -165,6 +153,5 @@ class Manhole:
             dwg.saveas(sys.path[0]+"/dxf/"+self.name + ".dxf")
         else:
             pass
-
 #mh200=Manhole("100",103,101,423.12,120.00)
 #mh200.Ciz()
