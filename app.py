@@ -4,6 +4,8 @@ from forms import ManholeForm
 import os
 from flask_wtf import FlaskForm
 
+#flask run --host=0.0.0.0
+
 app=Flask(__name__)
 app.debug = True
 app.secret_key = '1q2w3e4r5t6y'

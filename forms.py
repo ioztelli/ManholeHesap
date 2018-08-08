@@ -9,4 +9,4 @@ class ManholeForm(Form):
     il = TextField('Akar Kotu', [validators.Required('Lutfen akar kotunu girin.')])
     x = TextField('X Koordinati', [validators.Required('Lutfen x koordinatini girin.')])
     y = TextField('Y Koordinati', [validators.Required('Lutfen y koordinatini girin.')])
-    submit=SubmitField('Gonder')
+    submit=SubmitField('Gönder')
